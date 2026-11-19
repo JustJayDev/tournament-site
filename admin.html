@@ -249,6 +249,15 @@
             <button class="btn btn-primary" id="pub-copy">Copy full JSON</button>
             <button class="btn" id="pub-download">Download .json</button>
           </div>
+          <div class="sync-card">
+            <div class="sync-row">
+              <div class="sync-text">
+                <strong>Sync to Firebase</strong>
+                <span id="sync-status" class="sync-status">Not synced</span>
+              </div>
+              <button class="btn btn-primary" id="pub-sync">Sync now</button>
+            </div>
+          </div>
           <details class="bulk">
             <summary>Preview JSON</summary>
             <pre class="json-preview" id="pub-json"></pre>
@@ -280,6 +289,8 @@
   <!-- toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="firebase-config.js"></script>
+  <script src="admin-firebase.js"></script>
   <script src="admin.js"></script>
 </body>
 </html>

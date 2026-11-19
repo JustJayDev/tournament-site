@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public tournament doc: anyone may read (the live site renders from it).
+    // Writes require the admin key. NOTE: the key travels with the page,
+    // so this is a low-ceremony guard, not real authentication. If the
+    // admin panel ever needs true protection, add Firebase Auth.
+    match /tournament/{doc} {
+      allow read: if true;
+      allow write: if request.resource.data.adminKey == 'KZSK-9f4c2a7e8b1d6f0c3a9e7b4d2f8c1a';
+    }
+  }
+}

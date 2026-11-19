@@ -397,6 +397,21 @@ textarea.field { resize: vertical; min-height: 74px; }
 /* ---------- publish ---------- */
 .pub-summary { color: var(--muted); font-weight: 700; font-size: .92rem; }
 .pub-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: .6rem; }
+
+.sync-card {
+  background: var(--bg-deep);
+  border: 1px solid var(--panel-line);
+  border-radius: 12px;
+  padding: .8rem 1rem;
+  margin-bottom: .6rem;
+}
+.sync-row { display: flex; align-items: center; justify-content: space-between; gap: .8rem; flex-wrap: wrap; }
+.sync-text { display: flex; flex-direction: column; gap: .15rem; }
+.sync-text strong { font-family: var(--font-display); font-size: .95rem; letter-spacing: .03em; }
+.sync-status { font-size: .85rem; font-weight: 700; color: var(--muted); }
+.sync-status.ready { color: var(--ok); }
+.sync-status.error { color: var(--danger); }
+.sync-status.loading { color: var(--gold); }
 .json-preview {
   background: var(--bg-deep);
   border: 1px solid var(--panel-line);

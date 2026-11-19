@@ -542,6 +542,56 @@ function renderPublish() {
   $("#pub-summary").textContent =
     `${data.players.length} players · ${data.matches.length} matches · ` +
     (data.standings.length ? `${data.standings.length} ranked players` : "no standings yet");
+  updateSyncStatus();
+}
+
+function updateSyncStatus() {
+  const el = $("#sync-status");
+  if (!el) return;
+  const st = window.AdminFirebase ? window.AdminFirebase.getStatus() : { status: "idle", error: "" };
+  const map = {
+    idle: ["Not synced", ""],
+    loading: ["Connecting to Firebase…", "loading"],
+    ready: ["Connected — changes go live on Sync", "ready"],
+    offline: ["Firebase offline", "error"],
+    error: [st.error ? "Sync error: " + st.error : "Sync error", "error"],
+  };
+  const [text, cls] = map[st.status] || map.idle;
+  el.textContent = text;
+  el.className = "sync-status " + cls;
+}
+
+async function syncToFirebase() {
+  const btn = $("#pub-sync");
+  const st = $("#sync-status");
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Syncing…";
+  }
+  if (st) {
+    st.textContent = "Syncing…";
+    st.className = "sync-status loading";
+  }
+  try {
+    if (!window.AdminFirebase) {
+      throw new Error("Firebase module not loaded — check network and reload.");
+    }
+    const data = buildExport();
+    const res = await window.AdminFirebase.publish(data);
+    if (res.status === "ready") {
+      toast("Live site updated — players, standings, settings all synced");
+    } else {
+      throw new Error(res.error || "Sync failed");
+    }
+  } catch (e) {
+    toast(e.message || "Sync failed", false);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "Sync now";
+    }
+    updateSyncStatus();
+  }
 }
 
 function copyExport() {
@@ -669,6 +719,8 @@ function bindEvents() {
   $("#pub-copy").addEventListener("click", copyExport);
   $("#pub-download").addEventListener("click", downloadExport);
   $("#pub-reset").addEventListener("click", resetAll);
+  const syncBtn = $("#pub-sync");
+  if (syncBtn) syncBtn.addEventListener("click", syncToFirebase);
 
   $("#view-site").addEventListener("click", (e) => {
     e.preventDefault();
