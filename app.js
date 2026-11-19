@@ -1,4 +1,4 @@
-/* KAIZEN ₹200 tournament — site logic (v2 scoreboard) */
+/* KAIZEN ₹200 tournament — site logic (v3 logo-true palette) */
 
 /* ---------- registered players (from organizer's list) ---------- */
 const PLAYERS = [
@@ -10,8 +10,7 @@ const PLAYERS = [
 
 /* ---------- standings (from the tournament reference table) ----------
    Demo values until match results come in. First 3 rows are
-   placeholders — replace with real totals when matches finish.
-   Kills shown from the reference table order. */
+   placeholders — replace with real totals when matches finish. */
 const STANDINGS = [
   { rank: 1, team: "EGL ESP",     kills: 84, total: 93 },
   { rank: 2, team: "Team goat",   kills: 38, total: 67 },
@@ -86,8 +85,15 @@ function initSlots() {
   const pct = (FILLED / MAX_SLOTS) * 100;
   const el = $("slots-left");
   if (el) el.textContent = left;
+  const hero = $("hero-slots");
+  if (hero) hero.textContent = left;
   const fill = $("slots-fill");
   if (fill) fill.style.width = pct + "%";
+  const bar = $("slots-bar");
+  if (bar) {
+    bar.setAttribute("aria-valuenow", left);
+    bar.setAttribute("aria-valuetext", left + " slots left of 48");
+  }
 }
 
 /* ---------- register button ---------- */

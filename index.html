@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>₹200 Free Fire Tournament — Live Standings</title>
-  <meta name="description" content="Free Fire MAX BR SOLO tournament. ₹200 prize pool — 100/60/40 split. 48 slots, free entry. Register now by DM.">
+  <title>KAIZEN ₹200 Solo — Live Scoreboard</title>
+  <meta name="description" content="Free Fire MAX BR SOLO tournament by KaizenFF. ₹200 prize pool, 48 free slots. Live standings, point rules and WhatsApp registration.">
+  <meta name="theme-color" content="#18050D">
+  <link rel="icon" href="assets/tournament-logo-sm.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
@@ -17,118 +19,147 @@
   <!-- top branding bar -->
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <div class="brand">
-        <img src="assets/tournament-logo-sm.png" alt="KAIZEN logo" class="brand-logo" width="40" height="40">
-        <div class="brand-text">
+      <a class="brand" href="#top" aria-label="KAIZEN Free Fire MAX home">
+        <img src="assets/tournament-logo-sm.png" alt="" class="brand-logo" width="40" height="40">
+        <span class="brand-text">
           <strong>KAIZEN</strong>
           <span>FREE FIRE MAX</span>
-        </div>
-      </div>
-      <div class="live-tag"><span class="live-dot"></span> LIVE</div>
+        </span>
+      </a>
+      <div class="live-tag" role="status"><span class="live-dot"></span><span id="live-label">LIVE</span></div>
     </div>
   </header>
 
-  <!-- prize card -->
-  <section class="prize-card">
-    <div class="wrap">
-      <div class="card-head">
-        <h1>₹200 Tournament</h1>
-        <p class="subhead">BR • SOLO · 48 Slots · Free Entry</p>
-      </div>
-      <div class="prize-split">
-        <div class="split-cell first"><span>1st</span><strong>₹100</strong></div>
-        <div class="split-cell"><span>2nd</span><strong>₹60</strong></div>
-        <div class="split-cell"><span>3rd</span><strong>₹40</strong></div>
-      </div>
-      <div class="slots-row">
-        <span class="slots-label">Slots left</span>
-        <div class="slots-bar"><div class="slots-fill" id="slots-fill"></div></div>
-        <span class="slots-num" id="slots-left">31</span>
-        <span class="slots-total">/ 48</span>
-      </div>
-    </div>
-  </section>
+  <main id="top">
 
-  <!-- point system -->
-  <section class="points-section">
-    <div class="wrap">
-      <div class="table-title">
-        <h2>Point System</h2>
-        <span class="rule-chip">1 KILL : 1 POINT</span>
+    <!-- hero -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <img src="assets/tournament-logo-sm.png" alt="KAIZEN tournament emblem" class="hero-logo" width="96" height="96" fetchpriority="high">
+        <h1>₹200 Solo</h1>
+        <p class="subhead">Battle Royale • Solo · 48 slots · Free entry</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-label">Slots left</span>
+            <span class="stat-value" id="hero-slots">31</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Prize pool</span>
+            <span class="stat-value gold">₹200</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Kills</span>
+            <span class="stat-value">1 pt</span>
+          </div>
+        </div>
       </div>
-      <div class="points-grid">
-        <table class="pts-table">
-          <tbody>
-            <tr class="pt-high"><td>#1</td><td>12 pts</td></tr>
-            <tr><td>#2</td><td>9 pts</td></tr>
-            <tr><td>#3</td><td>8 pts</td></tr>
-            <tr><td>#4</td><td>7 pts</td></tr>
-            <tr><td>#5</td><td>6 pts</td></tr>
-            <tr><td>#6</td><td>5 pts</td></tr>
-          </tbody>
-        </table>
-        <table class="pts-table">
-          <tbody>
-            <tr><td>#7</td><td>4 pts</td></tr>
-            <tr><td>#8</td><td>3 pts</td></tr>
-            <tr><td>#9</td><td>2 pts</td></tr>
-            <tr><td>#10</td><td>1 pts</td></tr>
-            <tr class="pt-dim"><td>#11</td><td>0 pts</td></tr>
-            <tr class="pt-dim"><td>#12</td><td>0 pts</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="points-note">Placement points add on top of kill points.</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- standings table -->
-  <section class="standings-section">
-    <div class="wrap">
-      <div class="table-title">
-        <h2>Overall Standings</h2>
-        <span class="rule-chip">Top 3 highlighted</span>
+    <!-- prize split -->
+    <section class="prize-card" aria-labelledby="prize-title">
+      <div class="wrap">
+        <h2 class="section-title" id="prize-title">Payout</h2>
+        <div class="prize-split">
+          <div class="split-cell first"><span>1st</span><strong>₹100</strong></div>
+          <div class="split-cell"><span>2nd</span><strong>₹60</strong></div>
+          <div class="split-cell"><span>3rd</span><strong>₹40</strong></div>
+        </div>
+        <div class="slots-row">
+          <span class="slots-label" id="slots-label">Slots left</span>
+          <div class="slots-bar" role="progressbar" aria-labelledby="slots-label" aria-valuemin="0" aria-valuemax="48" id="slots-bar"><div class="slots-fill" id="slots-fill"></div></div>
+          <span class="slots-num" id="slots-left">31</span>
+          <span class="slots-total">/ 48</span>
+        </div>
       </div>
-      <div class="table-scroll">
-        <table class="standings-table">
-          <thead>
-            <tr>
-              <th class="col-rank">RANK</th>
-              <th class="col-team">TEAM NAME</th>
-              <th class="col-num">KILLS</th>
-              <th class="col-num">TOTAL</th>
-            </tr>
-          </thead>
-          <tbody id="standings-body">
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- registered players -->
-  <section class="players-section">
-    <div class="wrap">
-      <div class="table-title">
-        <h2>Registered Players</h2>
-        <span class="rule-chip" id="players-count">17 / 48</span>
+    <!-- point system -->
+    <section class="points-section" aria-labelledby="points-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title" id="points-title">Point System</h2>
+          <span class="rule-chip">1 KILL : 1 POINT</span>
+        </div>
+        <div class="points-grid">
+          <table class="pts-table">
+            <caption class="sr-only">Placement points, positions 1 to 6</caption>
+            <tbody>
+              <tr class="pt-high"><th scope="row">#1</th><td>12 pts</td></tr>
+              <tr><th scope="row">#2</th><td>9 pts</td></tr>
+              <tr><th scope="row">#3</th><td>8 pts</td></tr>
+              <tr><th scope="row">#4</th><td>7 pts</td></tr>
+              <tr><th scope="row">#5</th><td>6 pts</td></tr>
+              <tr><th scope="row">#6</th><td>5 pts</td></tr>
+            </tbody>
+          </table>
+          <table class="pts-table">
+            <caption class="sr-only">Placement points, positions 7 to 12</caption>
+            <tbody>
+              <tr><th scope="row">#7</th><td>4 pts</td></tr>
+              <tr><th scope="row">#8</th><td>3 pts</td></tr>
+              <tr><th scope="row">#9</th><td>2 pts</td></tr>
+              <tr><th scope="row">#10</th><td>1 pts</td></tr>
+              <tr class="pt-dim"><th scope="row">#11</th><td>0 pts</td></tr>
+              <tr class="pt-dim"><th scope="row">#12</th><td>0 pts</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="points-note">Placement points add on top of kill points.</p>
       </div>
-      <div class="player-list" id="player-list"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- register CTA -->
-  <section class="register-section">
-    <div class="wrap">
-      <div class="register-box">
-        <h2>Slot still open — get in</h2>
-        <p>DM on WhatsApp to lock your spot.</p>
-        <a class="btn" href="https://wa.me/918217816606?text=Hi!%20I%20want%20to%20register%20for%20the%20₹200%20Free%20Fire%20MAX%20BR%20SOLO%20tournament.%20My%20in-game%20name%20is:%20" target="_blank" rel="noopener">
-          Register on WhatsApp →
-        </a>
+    <!-- standings table -->
+    <section class="standings-section" aria-labelledby="standings-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title" id="standings-title">Overall Standings</h2>
+          <span class="rule-chip">Top 3 highlighted</span>
+        </div>
+        <p class="table-note">Preview table — final totals land after matches finish.</p>
+        <div class="table-scroll">
+          <table class="standings-table">
+            <caption class="sr-only">Player standings by rank, kills and total points</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="col-rank">Rank</th>
+                <th scope="col" class="col-team">Team name</th>
+                <th scope="col" class="col-num">Kills</th>
+                <th scope="col" class="col-num">Total</th>
+              </tr>
+            </thead>
+            <tbody id="standings-body">
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- registered players -->
+    <section class="players-section" aria-labelledby="players-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title" id="players-title">Registered Players</h2>
+          <span class="rule-chip" id="players-count">17 / 48</span>
+        </div>
+        <div class="player-list" id="player-list"></div>
+      </div>
+    </section>
+
+    <!-- register CTA -->
+    <section class="register-section" aria-labelledby="register-title">
+      <div class="wrap">
+        <div class="register-box">
+          <h2 class="section-title" id="register-title">Slot still open — get in</h2>
+          <p>DM on WhatsApp to lock your spot.</p>
+          <a class="btn" href="https://wa.me/918217816606?text=Hi!%20I%20want%20to%20register%20for%20the%20₹200%20Free%20Fire%20MAX%20BR%20SOLO%20tournament.%20My%20in-game%20name%20is:%20" target="_blank" rel="noopener">
+            <svg class="btn-ico" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.27Z"/></svg>
+            Register on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer class="site-footer">
     <div class="wrap">
