@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>₹200 Free Fire Tournament — KAIZEN</title>
+  <meta name="description" content="Free Fire MAX BR SOLO tournament. ₹200 prize pool — 100/60/40 split. 48 slots, free entry. Register now by DM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <img src="assets/tournament-logo.png" alt="" class="brand-logo" width="48" height="48">
+        <div class="brand-text">
+          <strong>KAIZEN</strong>
+          <span>Esports</span>
+        </div>
+      </div>
+      <div class="header-badge">Free Fire MAX</div>
+    </div>
+  </header>
+
+  <!-- 🏆 The signboard: first screen, the memorable element -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="signboard">
+
+        <div class="sb-top">
+          <span class="sb-flag">🎯 LIVE TOURNAMENT</span>
+          <p class="sb-sub">Free Fire MAX • BR SOLO</p>
+        </div>
+
+        <div class="sb-money">
+          <span class="sb-rs">₹</span>
+          <span class="sb-amount" id="prize-amount">200</span>
+        </div>
+
+        <div class="sb-pool">
+          <span>Prize pool</span>
+          <strong>₹200</strong>
+        </div>
+
+        <div class="sb-split">
+          <div class="split-row"><span>1st</span><strong>₹100</strong></div>
+          <div class="split-row"><span>2nd</span><strong>₹60</strong></div>
+          <div class="split-row"><span>3rd</span><strong>₹40</strong></div>
+        </div>
+
+        <img src="assets/brand-banner.png" alt="₹200 tournament emblem" class="sb-emblem" width="160" height="160">
+
+        <div class="sb-cta">
+          <a class="btn" id="register-btn" href="https://wa.me/918217816606?text=Hi!%20I%20want%20to%20register%20for%20the%20₹200%20Free%20Fire%20MAX%20BR%20SOLO%20tournament.%20My%20in-game%20name%20is:%20" target="_blank" rel="noopener">
+            <span class="btn-label">Register — free entry</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <p class="btn-note">DM on WhatsApp · @ +91 82178 16606</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔢 Slots counter -->
+  <section class="slots" aria-label="Slots remaining">
+    <div class="wrap slots-inner">
+      <div class="slots-label">Slots left</div>
+      <div class="slots-bar"><div class="slots-fill" id="slots-fill"></div></div>
+      <div class="slots-numbers">
+        <span class="slots-left" id="slots-left">48</span>
+        <span class="slots-total">/ 48</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📋 The essentials -->
+  <section class="facts">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Match details</h2>
+        <p>Everything runs inside one custom room.</p>
+      </div>
+      <dl class="facts-grid">
+        <div class="fact"><dt>Format</dt><dd>BR • SOLO</dd></div>
+        <div class="fact"><dt>Slots</dt><dd>48 players</dd></div>
+        <div class="fact"><dt>Entry</dt><dd>Free</dd></div>
+        <div class="fact"><dt>Prize pool</dt><dd>₹200</dd></div>
+        <div class="fact"><dt>Split</dt><dd>100 / 60 / 40</dd></div>
+        <div class="fact"><dt>Mode</dt><dd>Custom room</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 📍 Registered players -->
+  <section class="players">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Registered players</h2>
+        <p id="players-count">17 players in</p>
+      </div>
+      <ol class="player-list" id="player-list"></ol>
+    </div>
+  </section>
+
+  <!-- 🏅 Points / how it works -->
+  <section class="points">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How points work</h2>
+        <p>One kill = 1 point. Placement points on top.</p>
+      </div>
+
+      <div class="points-grid">
+        <div class="point-card">
+          <h3>Placement points</h3>
+          <table class="pts-table">
+            <thead><tr><th>Rank</th><th>Points</th></tr></thead>
+            <tbody>
+              <tr><td>#1</td><td>12</td></tr>
+              <tr><td>#2</td><td>9</td></tr>
+              <tr><td>#3</td><td>8</td></tr>
+              <tr><td>#4</td><td>7</td></tr>
+              <tr><td>#5</td><td>6</td></tr>
+              <tr><td>#6</td><td>5</td></tr>
+              <tr><td>#7</td><td>4</td></tr>
+              <tr><td>#8</td><td>3</td></tr>
+              <tr><td>#9</td><td>2</td></tr>
+              <tr><td>#10</td><td>1</td></tr>
+              <tr class="row-dim"><td>#11</td><td>0</td></tr>
+              <tr class="row-dim"><td>#12</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="point-card">
+          <h3>Kill points</h3>
+          <div class="kill-rule">
+            <span class="kill-big">1</span>
+            <span class="kill-eq">=</span>
+            <span class="kill-big">1</span>
+            <span class="kill-label">point</span>
+          </div>
+          <p class="card-note">Every elimination gives you one point. Placement points are added after the match ends.</p>
+
+          <h3 class="mt">Example</h3>
+          <div class="example-box">
+            <p>You finish <strong>#2</strong> with <strong>6 kills</strong>.</p>
+            <p class="example-math">9 + 6 = <strong>15 points</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎯 Final call to action -->
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>Ready to drop in?</h2>
+      <p>Slots are filling — DM now to lock yours.</p>
+      <a class="btn btn-lg" href="https://wa.me/918217816606?text=Hi!%20I%20want%20to%20register%20for%20the%20₹200%20Free%20Fire%20MAX%20BR%20SOLO%20tournament.%20My%20in-game%20name%20is:%20" target="_blank" rel="noopener">
+        <span class="btn-label">Register on WhatsApp</span>
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>KAIZEN Esports · Free Fire MAX</p>
+      <p class="footer-note">Organized by <a href="https://youtube.com/@kaizenff.official" target="_blank" rel="noopener">KaizenFF</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
