@@ -21,7 +21,7 @@ const DEFAULT_DATA = {
     finals: { label: "Finals", date: "", time: "", status: "tbd" },
     points: { kill: 1, placement: [12, 9, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0] },
     tiebreak: "Booyah > Kills > Placement",
-    stream: { channel: "XT Esports", url: "https://youtube.com/@XT-SAAZ", time: "5:30 PM" },
+    stream: { channel: "XT Esports", url: "https://youtube.com/@team_xt_dory", time: "5:30 PM" },
     rules: [
       "Squad entry only (4 players per team)",
       "Keep all maps downloaded before the match",

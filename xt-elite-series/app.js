@@ -9,7 +9,7 @@ let TOURNAMENT = {
   status: "live",
   schedule: [],
   finals: { label: "Finals", date: "", time: "", status: "tbd" },
-  stream: { channel: "XT Esports", url: "https://youtube.com/@XT-SAAZ", time: "5:30 PM" },
+  stream: { channel: "XT Esports", url: "https://youtube.com/@team_xt_dory", time: "5:30 PM" },
 };
 
 function applyTournamentData(data) {
