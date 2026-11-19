@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAIZEN Admin — Tournament Control</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#18050D">
+  <link rel="icon" href="assets/tournament-logo-sm.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true"></div>
+
+  <!-- topbar -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <img src="assets/tournament-logo-sm.png" alt="" class="brand-logo" width="38" height="38">
+        <div class="brand-text">
+          <strong>KAIZEN Admin</strong>
+          <span>Tournament control</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span class="status-pill live" id="status-pill">LIVE</span>
+        <a class="view-site" href="./index.html" target="_blank" rel="noopener" id="view-site">View site</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap layout">
+
+    <!-- nav -->
+    <nav class="nav" aria-label="Admin sections">
+      <button class="nav-item" data-tab="overview">Overview</button>
+      <button class="nav-item" data-tab="players">
+        Players <span class="nav-count" id="nav-player-count">0</span>
+      </button>
+      <button class="nav-item" data-tab="matches">Matches</button>
+      <button class="nav-item" data-tab="standings">Standings</button>
+      <button class="nav-item" data-tab="settings">Settings</button>
+      <button class="nav-item" data-tab="publish">Publish</button>
+    </nav>
+
+    <!-- main -->
+    <main class="main">
+
+      <!-- ============ OVERVIEW ============ -->
+      <section class="tab-panel active" id="tab-overview">
+        <h1 class="page-title">Overview</h1>
+
+        <div class="stats-strip">
+          <div class="stat">
+            <span class="stat-label">Slots filled</span>
+            <span class="stat-value" id="stat-slots">–</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Slots left</span>
+            <span class="stat-value gold" id="stat-slots-left">–</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Matches</span>
+            <span class="stat-value" id="stat-matches">–</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Ranked</span>
+            <span class="stat-value" id="stat-standing">–</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Tournament status</h2>
+          <p class="card-sub">Controls the LIVE label shown on the public site.</p>
+          <div class="status-options">
+            <label class="status-opt">
+              <input type="radio" name="status" value="live">
+              <span class="status-chip live">LIVE</span>
+            </label>
+            <label class="status-opt">
+              <input type="radio" name="status" value="upcoming">
+              <span class="status-chip upcoming">UPCOMING</span>
+            </label>
+            <label class="status-opt">
+              <input type="radio" name="status" value="completed">
+              <span class="status-chip completed">COMPLETED</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Data at a glance</h2>
+          <ul class="facts">
+            <li><span>Matches</span><strong id="ov-matches">–</strong></li>
+            <li><span>Drafts</span><strong id="ov-drafts">–</strong></li>
+            <li><span>Standings</span><strong id="ov-standing-state">–</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ PLAYERS ============ -->
+      <section class="tab-panel" id="tab-players">
+        <h1 class="page-title">Players</h1>
+        <p class="page-sub" id="player-count-note">–</p>
+
+        <div class="card">
+          <h2 class="card-title">Add a player</h2>
+          <div class="field-row">
+            <label class="field-label" for="player-add">In-game name</label>
+            <div class="field-group">
+              <input class="field" id="player-add" type="text" placeholder="e.g. TQG.KAIZEN07" autocomplete="off">
+              <button class="btn btn-primary" id="player-add-btn">Add</button>
+            </div>
+          </div>
+
+          <details class="bulk">
+            <summary>Bulk add (paste a list)</summary>
+            <div class="field-row">
+              <label class="field-label" for="player-bulk">One name per line or comma-separated</label>
+              <textarea class="field" id="player-bulk" rows="4" placeholder="Player One&#10;Player Two&#10;Player Three"></textarea>
+            </div>
+            <button class="btn" id="player-bulk-btn">Add all</button>
+          </details>
+        </div>
+
+        <div class="card">
+          <div class="list-head">
+            <h2 class="card-title">Roster</h2>
+            <input class="field field-search" id="player-filter" type="search" placeholder="Search roster…" aria-label="Search roster">
+          </div>
+          <div class="list" id="players-list"></div>
+        </div>
+      </section>
+
+      <!-- ============ MATCHES ============ -->
+      <section class="tab-panel" id="tab-matches">
+        <h1 class="page-title">Matches</h1>
+        <p class="page-sub">Each match records each player's placement (1–12) and kills. Placement points come from the Point System in Settings.</p>
+
+        <div class="card" id="match-form">
+          <h2 class="card-title" id="match-form-title">New match</h2>
+          <div class="field-row">
+            <label class="field-label" for="match-date">Date (optional)</label>
+            <input class="field" id="match-date" type="text" placeholder="e.g. 2026-11-20" autocomplete="off">
+          </div>
+
+          <div class="match-row match-row-head" aria-hidden="true">
+            <span>Player</span>
+            <span>Placement</span>
+            <span>Kills</span>
+            <span></span>
+          </div>
+          <div id="match-rows"></div>
+
+          <div class="match-actions">
+            <button class="btn" id="match-add-row">+ Add result row</button>
+            <span class="actions-spacer"></span>
+            <button class="btn" id="match-cancel">Cancel</button>
+            <button class="btn btn-primary" id="match-save">Save match</button>
+          </div>
+        </div>
+
+        <div id="matches-wrap"></div>
+      </section>
+
+      <!-- ============ STANDINGS ============ -->
+      <section class="tab-panel" id="tab-standings">
+        <h1 class="page-title">Standings</h1>
+        <p class="page-sub">Computed automatically from entered match results. The public site shows standings only after you publish.</p>
+        <div id="standings-wrap"></div>
+      </section>
+
+      <!-- ============ SETTINGS ============ -->
+      <section class="tab-panel" id="tab-settings">
+        <h1 class="page-title">Settings</h1>
+
+        <div class="card">
+          <h2 class="card-title">Tournament basics</h2>
+          <div class="field-row">
+            <label class="field-label" for="set-slots">Max slots</label>
+            <input class="field field-num" id="set-slots" type="number" min="1">
+          </div>
+          <div class="field-row">
+            <label class="field-label" for="set-prize">Prize pool label</label>
+            <input class="field" id="set-prize" type="text">
+          </div>
+          <div class="field-row">
+            <label class="field-label" for="set-kill">Points per kill</label>
+            <input class="field field-num" id="set-kill" type="number" min="0">
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Payouts</h2>
+          <p class="card-sub">Shown in the Prize/Payout section of the public site.</p>
+          <div class="payouts" id="set-payouts"></div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Placement points</h2>
+          <p class="card-sub">Points per placement rank (1–12). Used to compute standings.</p>
+          <div class="placement-grid" id="set-placement"></div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Contact</h2>
+          <div class="field-row">
+            <label class="field-label" for="set-wa">WhatsApp number (with country code)</label>
+            <input class="field" id="set-wa" type="tel" placeholder="e.g. 918217816606">
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Footer</h2>
+          <div class="field-row">
+            <label class="field-label" for="set-footer-text">Footer text</label>
+            <input class="field" id="set-footer-text" type="text">
+          </div>
+          <div class="field-row">
+            <label class="field-label" for="set-footer-link">Organizer link URL</label>
+            <input class="field" id="set-footer-link" type="text">
+          </div>
+          <div class="field-row">
+            <label class="field-label" for="set-footer-label">Organizer link label</label>
+            <input class="field" id="set-footer-label" type="text">
+          </div>
+        </div>
+
+        <div class="sticky-actions">
+          <button class="btn btn-primary" id="settings-save">Save settings</button>
+        </div>
+      </section>
+
+      <!-- ============ PUBLISH ============ -->
+      <section class="tab-panel" id="tab-publish">
+        <h1 class="page-title">Publish</h1>
+        <p class="page-sub">The public site is static, so publish means producing a fresh <code>tournament-data.json</code> from this panel.s data. Then give it to the builder to commit and deploy.</p>
+
+        <div class="card">
+          <div class="list-head">
+            <h2 class="card-title">Export</h2>
+            <span class="pub-summary" id="pub-summary">–</span>
+          </div>
+          <div class="pub-actions">
+            <button class="btn btn-primary" id="pub-copy">Copy full JSON</button>
+            <button class="btn" id="pub-download">Download .json</button>
+          </div>
+          <details class="bulk">
+            <summary>Preview JSON</summary>
+            <pre class="json-preview" id="pub-json"></pre>
+          </details>
+        </div>
+
+        <div class="card card-danger">
+          <h2 class="card-title">Danger zone</h2>
+          <p class="card-sub">Wipes all data on this device and restores defaults. The live site is untouched until you publish again.</p>
+          <button class="btn btn-danger" id="pub-reset">Reset all data</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 class="modal-title" id="modal-title">Are you sure?</h2>
+      <p class="modal-body" id="modal-body">–</p>
+      <div class="modal-actions">
+        <button class="btn" id="modal-cancel">Cancel</button>
+        <button class="btn btn-primary" id="modal-confirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

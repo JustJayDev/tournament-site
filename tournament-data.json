@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-11-19T06:17:06.007Z",
+  "tournament": {
+    "title": "₹200 Solo",
+    "status": "live",
+    "slots": {
+      "max": 48,
+      "filled": 17,
+      "left": 31
+    },
+    "prize": {
+      "label": "₹200",
+      "payouts": {
+        "1": 100,
+        "2": 60,
+        "3": 40
+      }
+    },
+    "points": {
+      "kill": 1,
+      "placement": [
+        12,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    "whatsapp": "918217816606",
+    "footer": {
+      "text": "KAIZEN Esports · Free Fire MAX",
+      "link": "https://youtube.com/@kaizenff.official",
+      "label": "KaizenFF"
+    }
+  },
+  "players": [
+    "Royal राजपूत",
+    "Ꭺʀʀᴏᴡ",
+    "MR X. LIVE",
+    "TQG.KAIZEN07",
+    "OFL HITESH",
+    "TG MAFIA",
+    "RizzyTheOG",
+    "TOX1C",
+    "mahendraaa7",
+    "Mvp speedy",
+    "Bewafa",
+    "༒VIKASH-KinG",
+    "GP.J1NW00",
+    "ABHIMANYU1",
+    "7h aura",
+    "Agent ITACHI",
+    "Rock yt."
+  ],
+  "matches": [],
+  "standings": []
+}
