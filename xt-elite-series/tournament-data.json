@@ -43,7 +43,20 @@
     },
     "points": {
       "kill": 1,
-      "placement": [12, 9, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0]
+      "placement": [
+        12,
+        9,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0
+      ]
     },
     "tiebreak": "Booyah > Kills > Placement",
     "stream": {
@@ -81,18 +94,92 @@
         "KING GANG"
       ],
       "standings": [
-        { "team": "TEAM XT", "points": 171, "kills": 127, "booyah": 1, "mp": 3 },
-        { "team": "RETRIED PROS", "points": 64, "kills": 38, "booyah": 1, "mp": 3 },
-        { "team": "K2 GLOBAL", "points": 61, "kills": 36, "booyah": 1, "mp": 3 },
-        { "team": "RUTHLESS X", "points": 45, "kills": 12, "booyah": 1, "mp": 3 },
-        { "team": "UK RAWAT MATES", "points": 25, "kills": 10, "booyah": 1, "mp": 3 },
-        { "team": "SHASTRI BOYS", "points": 22, "kills": 4, "booyah": 1, "mp": 3 },
-        { "team": "XIN PANEL", "points": 20, "kills": 7, "booyah": 0, "mp": 3 },
-        { "team": "NXT LEVEL TEAM", "points": 19, "kills": 3, "booyah": 0, "mp": 3 },
-        { "team": "THE GOATS", "points": 17, "kills": 1, "booyah": 0, "mp": 3 },
-        { "team": "BLACK 444", "points": 12, "kills": 6, "booyah": 0, "mp": 3 },
-        { "team": "FEAR MAKERS", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true },
-        { "team": "KING GANG", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true }
+        {
+          "team": "TEAM XT",
+          "points": 171,
+          "kills": 127,
+          "booyah": 1,
+          "mp": 3
+        },
+        {
+          "team": "RETRIED PROS",
+          "points": 64,
+          "kills": 38,
+          "booyah": 1,
+          "mp": 3
+        },
+        {
+          "team": "K2 GLOBAL",
+          "points": 61,
+          "kills": 36,
+          "booyah": 1,
+          "mp": 3
+        },
+        {
+          "team": "RUTHLESS X",
+          "points": 45,
+          "kills": 12,
+          "booyah": 1,
+          "mp": 3
+        },
+        {
+          "team": "UK RAWAT MATES",
+          "points": 25,
+          "kills": 10,
+          "booyah": 1,
+          "mp": 3
+        },
+        {
+          "team": "SHASTRI BOYS",
+          "points": 22,
+          "kills": 4,
+          "booyah": 1,
+          "mp": 3
+        },
+        {
+          "team": "XIN PANEL",
+          "points": 20,
+          "kills": 7,
+          "booyah": 0,
+          "mp": 3
+        },
+        {
+          "team": "NXT LEVEL TEAM",
+          "points": 19,
+          "kills": 3,
+          "booyah": 0,
+          "mp": 3
+        },
+        {
+          "team": "THE GOATS",
+          "points": 17,
+          "kills": 1,
+          "booyah": 0,
+          "mp": 3
+        },
+        {
+          "team": "BLACK 444",
+          "points": 12,
+          "kills": 6,
+          "booyah": 0,
+          "mp": 3
+        },
+        {
+          "team": "FEAR MAKERS",
+          "points": 0,
+          "kills": 0,
+          "booyah": 0,
+          "mp": 0,
+          "dnp": true
+        },
+        {
+          "team": "KING GANG",
+          "points": 0,
+          "kills": 0,
+          "booyah": 0,
+          "mp": 0,
+          "dnp": true
+        }
       ],
       "matches": [],
       "qualifiers": 4
@@ -116,18 +203,94 @@
         "CANDY ESP"
       ],
       "standings": [
-        { "team": "THE CODER", "points": 93, "kills": 60, "booyah": 1, "mp": 4 },
-        { "team": "X4 ESP", "points": 61, "kills": 32, "booyah": 1, "mp": 4 },
-        { "team": "TERYMAX ESPORTS", "points": 54, "kills": 29, "booyah": 0, "mp": 3 },
-        { "team": "DOOM TROOPERZ", "points": 54, "kills": 22, "booyah": 0, "mp": 4 },
-        { "team": "TEAM RG", "points": 48, "kills": 24, "booyah": 0, "mp": 3 },
-        { "team": "TLW RANGERS", "points": 28, "kills": 11, "booyah": 0, "mp": 3 },
-        { "team": "RAI 444", "points": 21, "kills": 3, "booyah": 0, "mp": 3 },
-        { "team": "TOXIC BROTHER", "points": 5, "kills": 1, "booyah": 0, "mp": 1 },
-        { "team": "TRG BADSHAH", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true },
-        { "team": "TEAM WARRIOR", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true },
-        { "team": "NEXORA ESPORTS", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true },
-        { "team": "CANDY ESP", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true }
+        {
+          "team": "THE CODER",
+          "points": 93,
+          "kills": 60,
+          "booyah": 1,
+          "mp": 4
+        },
+        {
+          "team": "X4 ESP",
+          "points": 61,
+          "kills": 32,
+          "booyah": 1,
+          "mp": 4
+        },
+        {
+          "team": "TERYMAX ESPORTS",
+          "points": 54,
+          "kills": 29,
+          "booyah": 0,
+          "mp": 3
+        },
+        {
+          "team": "DOOM TROOPERZ",
+          "points": 54,
+          "kills": 22,
+          "booyah": 0,
+          "mp": 4
+        },
+        {
+          "team": "TEAM RG",
+          "points": 48,
+          "kills": 24,
+          "booyah": 0,
+          "mp": 3
+        },
+        {
+          "team": "TLW RANGERS",
+          "points": 28,
+          "kills": 11,
+          "booyah": 0,
+          "mp": 3
+        },
+        {
+          "team": "RAI 444",
+          "points": 21,
+          "kills": 3,
+          "booyah": 0,
+          "mp": 3
+        },
+        {
+          "team": "TOXIC BROTHER",
+          "points": 5,
+          "kills": 1,
+          "booyah": 0,
+          "mp": 1
+        },
+        {
+          "team": "TRG BADSHAH",
+          "points": 0,
+          "kills": 0,
+          "booyah": 0,
+          "mp": 0,
+          "dnp": true
+        },
+        {
+          "team": "TEAM WARRIOR",
+          "points": 0,
+          "kills": 0,
+          "booyah": 0,
+          "mp": 0,
+          "dnp": true
+        },
+        {
+          "team": "NEXORA ESPORTS",
+          "points": 0,
+          "kills": 0,
+          "booyah": 0,
+          "mp": 0,
+          "dnp": true
+        },
+        {
+          "team": "CANDY ESP",
+          "points": 0,
+          "kills": 0,
+          "booyah": 0,
+          "mp": 0,
+          "dnp": true
+        }
       ],
       "matches": [],
       "qualifiers": 4
@@ -136,7 +299,20 @@
       "id": "grp-c",
       "label": "Group C",
       "status": "today",
-      "teams": [],
+      "teams": [
+        "BABA KINGS",
+        "TRAK JSP",
+        "AS ROY",
+        "FIRE STRIKER ESPORTS",
+        "HARSHUFF",
+        "RG X L0VER",
+        "SSG ANGRY",
+        "TM KARUNADU",
+        "VORTEX",
+        "TBA",
+        "TBA",
+        "TBA"
+      ],
       "standings": [],
       "matches": [],
       "qualifiers": 4

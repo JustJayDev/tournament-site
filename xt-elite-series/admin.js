@@ -35,20 +35,49 @@ const DEFAULT_DATA = {
   groups: {
     A: { id: "grp-a", label: "Group A", status: "done", teams: [], matches: [], qualifiers: 4 },
     B: { id: "grp-b", label: "Group B", status: "done", teams: [], matches: [], qualifiers: 4 },
-    C: { id: "grp-c", label: "Group C", status: "today", teams: [], matches: [], qualifiers: 4 },
+    C: {
+      id: "grp-c", label: "Group C", status: "today", matches: [], qualifiers: 4,
+      teams: [
+        "BABA KINGS", "TRAK JSP", "AS ROY", "FIRE STRIKER ESPORTS", "HARSHUFF",
+        "RG X L0VER", "SSG ANGRY", "TM KARUNADU", "VORTEX", "TBA", "TBA", "TBA",
+      ],
+    },
   },
 };
 
 let state = loadState();
 let currentTab = "overview";
 let editingMatchGroup = "A";
+let loadedFromStorage = false;
 
 function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      loadedFromStorage = true;
+      return JSON.parse(raw);
+    }
   } catch (e) {}
   return structuredClone(DEFAULT_DATA);
+}
+
+/* Deep-merge live tournament data into a fresh admin state so the panel
+   never starts blank (and never wipes real teams/standings on publish). */
+function mergeDeep(target, source) {
+  if (!source) return target;
+  for (const k of Object.keys(source)) {
+    const sv = source[k];
+    const tv = target && k in target ? target[k] : undefined;
+    if (Array.isArray(sv)) {
+      if (!Array.isArray(tv) || tv.length === 0) target[k] = structuredClone(sv);
+    } else if (sv && typeof sv === "object") {
+      if (!tv || typeof tv !== "object") target[k] = structuredClone(sv);
+      else mergeDeep(tv, sv);
+    } else {
+      if (tv === undefined || tv === null || tv === "") target[k] = sv;
+    }
+  }
+  return target;
 }
 
 function saveState() {
@@ -647,9 +676,21 @@ function bindEvents() {
   });
 }
 
-function boot() {
+async function boot() {
   bindEvents();
   switchTab("overview");
+  // Fresh admin (no local state): load the live Firestore data so the panel
+  // starts with the real teams/standings instead of blank defaults.
+  if (!loadedFromStorage && window.AdminFirebase) {
+    try {
+      await window.AdminFirebase.init();
+      const live = await window.AdminFirebase.fetch();
+      if (live) {
+        state = mergeDeep(state, live);
+        saveState();
+      }
+    } catch (e) {}
+  }
 }
 
 if (document.readyState === "loading") {

@@ -134,6 +134,17 @@ main.wrap { padding-top: 28px; padding-bottom: 48px; }
 .groupc-body { padding: 22px 18px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
 .groupc-line { font-weight: 600; color: var(--gold-soft); }
 .groupc-empty { color: var(--muted); font-size: 13px; }
+.groupc-teams { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.team-chip {
+  display: inline-flex; align-items: center;
+  background: var(--panel-2, rgba(255,255,255,0.04));
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px; font-weight: 600;
+  color: var(--text);
+}
+.team-chip.tba { opacity: 0.55; border-style: dashed; }
 
 /* ---------- finals ---------- */
 .finals {

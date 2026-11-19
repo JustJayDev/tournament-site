@@ -53,6 +53,22 @@ window.AdminFirebase = (() => {
     return getStatus();
   }
 
+  async function fetch() {
+    if (!firestore) {
+      const s = await init();
+      if (s.status !== STATUS.ready) return null;
+    }
+    try {
+      const snap = await firestore.collection(COLLECTION).doc(DOC).get();
+      if (!snap.exists) return null;
+      const data = snap.data();
+      delete data.adminKey;
+      return data;
+    } catch (e) {
+      return null;
+    }
+  }
+
   async function publish(payload) {
     if (!firestore) {
       const s = await init();

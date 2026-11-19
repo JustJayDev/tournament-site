@@ -52,6 +52,25 @@ function renderGroupC() {
     badge.textContent = { done: "DONE", today: "TODAY", upcoming: "UPCOMING", tbd: "TBD" }[g.status] || g.status;
     badge.className = "doc-badge " + (g.status || "");
   }
+  const wrap = $("groupc-teams");
+  if (wrap) {
+    const teams = (TOURNAMENT.groups && TOURNAMENT.groups.C && TOURNAMENT.groups.C.teams) || [];
+    wrap.innerHTML = "";
+    if (teams.length) {
+      teams.forEach((t, i) => {
+        const chip = document.createElement("span");
+        chip.className = "team-chip" + (t === "TBA" ? " tba" : "");
+        chip.textContent = `${i + 1}. ${t}`;
+        wrap.appendChild(chip);
+      });
+      const empty = $("groupc-empty");
+      if (empty) empty.hidden = true;
+    } else {
+      const empty = $("groupc-empty");
+      if (empty) empty.hidden = false;
+      wrap.hidden = true;
+    }
+  }
 }
 
 function renderFinals() {
