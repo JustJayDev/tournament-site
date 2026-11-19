@@ -7,9 +7,6 @@
   <meta name="description" content="ELITE SERIES S1 Free Fire MAX group tournament by XT Esports. Group standings, schedule, points and live stream.">
   <meta name="theme-color" content="#0A0D12">
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%230A0D12"/><text x="32" y="42" font-family="Arial Black,Arial,sans-serif" font-size="26" font-weight="900" fill="%23CCAA57" text-anchor="middle">XT</text></svg>'>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,84 +22,81 @@
       </div>
       <div class="topbar-right">
         <span class="live-pill" id="live-pill">LIVE</span>
-        <a class="watch-live" id="top-watch" href="https://youtube.com/@XT-SAAZ" target="_blank" rel="noopener">WATCH LIVE</a>
+        <a class="watch-live" href="https://youtube.com/@XT-SAAZ" target="_blank" rel="noopener">WATCH LIVE</a>
       </div>
     </div>
   </header>
 
-  <!-- hero: like the real poster -->
-  <section class="hero">
-    <div class="hero-bg" id="hero-bg" role="img" aria-label="XT Esports ELITE SERIES S1 live stream poster"></div>
-    <div class="hero-overlay"></div>
-    <div class="wrap hero-inner">
-      <div class="hero-brand">
-        <span class="hero-esports">ESPORTS</span>
-        <span class="hero-present">XT ESPORTS PRESENTS</span>
-      </div>
-      <h1 class="hero-title">ELITE<br>SERIES <em>S1</em></h1>
-      <p class="hero-sub" id="hero-sub">Group stage — 36 teams, 3 groups, top 4 qualify</p>
-      <div class="hero-facts">
-        <div class="fact">
-          <span class="fact-label">Prize</span>
-          <span class="fact-value" id="prize-value">₹500</span>
-        </div>
-        <div class="fact">
-          <span class="fact-label">Format</span>
-          <span class="fact-value" id="format-value">Groups → Finals</span>
-        </div>
-        <div class="fact">
-          <span class="fact-label">Stream</span>
-          <span class="fact-value" id="stream-value">5:30 PM</span>
-        </div>
-      </div>
-      <div class="hero-stream">
-        <span class="stream-label">LIVE STREAM ON XT ESPORTS CHANNEL — STARTS 5:30 PM</span>
-        <a class="stream-url" href="https://youtube.com/@XT-SAAZ" target="_blank" rel="noopener">youtube.com/@XT-SAAZ</a>
-      </div>
-    </div>
+  <!-- official stream poster -->
+  <section class="poster">
+    <img src="assets/poster-stream.jpg" alt="ELITE SERIES S1 — live stream on XT Esports channel, starts 5:30 PM, youtube.com/@XT-SAAZ" loading="eager">
   </section>
 
-  <!-- today's schedule strip -->
+  <!-- today's strip -->
   <section class="today" id="today-strip" hidden>
     <div class="wrap today-inner">
-      <span class="today-label">TODAY</span>
+      <span class="today-label" id="today-label">TODAY</span>
       <span class="today-info" id="today-info"></span>
-      <a class="btn btn-live" id="stream-link" href="#" target="_blank" rel="noopener">WATCH LIVE →</a>
+      <a class="btn-live" id="stream-link" href="#" target="_blank" rel="noopener">WATCH LIVE →</a>
     </div>
   </section>
 
   <main class="wrap">
 
-    <!-- qualified band -->
-    <section class="qualified-band">
-      <div class="qualified-head">
-        <span class="qualified-title">TOP 4 QUALIFIED FOR FINALS</span>
-        <span class="qualified-sub">Group A · Group B</span>
+    <!-- official Group A point table -->
+    <section class="doc-block">
+      <div class="doc-head">
+        <h2>GROUP A · POINT TABLE</h2>
+        <span class="doc-badge done">DONE</span>
       </div>
-      <div class="qualified-teams" id="qualified-teams"></div>
+      <img src="assets/table-group-a.jpg" alt="Group A point table — winners: TEAM XT, RETRIED PROS, K2 GLOBAL, RUTHLESS X qualify for finals" loading="lazy">
+      <p class="doc-note">Top 4 qualified for finals</p>
     </section>
 
-    <!-- group standings table -->
-    <section class="groups" id="groups-wrap"></section>
+    <!-- official Group B point table -->
+    <section class="doc-block">
+      <div class="doc-head">
+        <h2>GROUP B · POINT TABLE</h2>
+        <span class="doc-badge done">DONE</span>
+      </div>
+      <img src="assets/table-group-b.jpg" alt="Group B point table — winners: THE CODER, X4 ESP, TERYMAX ESPORTS, DOOM TROOPERZ qualify for finals" loading="lazy">
+      <p class="doc-note">Top 4 qualified for finals</p>
+    </section>
+
+    <!-- Group C -->
+    <section class="doc-block">
+      <div class="doc-head">
+        <h2>GROUP C</h2>
+        <span class="doc-badge today" id="groupc-badge">TODAY</span>
+      </div>
+      <div class="groupc-body">
+        <p class="groupc-line" id="groupc-line">Group C · 19-11-2026 · 5:30 PM</p>
+        <p class="groupc-empty">Teams will be announced before match time.</p>
+        <a class="watch-live" href="https://youtube.com/@XT-SAAZ" target="_blank" rel="noopener">WATCH LIVE</a>
+      </div>
+    </section>
+
+    <!-- official points system -->
+    <section class="doc-block">
+      <div class="doc-head">
+        <h2>POINT SYSTEM</h2>
+      </div>
+      <img src="assets/poster-points.jpg" alt="Point system — 1st 12, 2nd 9, 3rd 7, 4th 6, 5th 5, 6th 4, 7th 3, 8th 2, 9th 1, 1 point per kill. Points priority: Booyah > Kills > Placement" loading="lazy">
+    </section>
+
+    <!-- official rules -->
+    <section class="doc-block">
+      <div class="doc-head">
+        <h2>RULES &amp; REGULATIONS</h2>
+      </div>
+      <img src="assets/poster-rules.jpg" alt="Rules and regulations — keep all maps downloaded, take squad entry, do not invite randoms (random invite = -15), abuse or misbehave = -10, be respectful to each other, same active character skill not allowed" loading="lazy">
+    </section>
 
     <!-- finals -->
-    <section class="finals card" id="finals-card">
-      <h2 class="card-title">Finals</h2>
+    <section class="finals" id="finals-card">
+      <h2>FINALS</h2>
       <p class="finals-date" id="finals-date">Date to be announced by admin</p>
-      <div class="finals-note" id="finals-note">Top 4 from each group qualify. 12 teams compete in the final.</div>
-    </section>
-
-    <!-- points + rules -->
-    <section class="rules-grid">
-      <div class="card">
-        <h2 class="card-title">Point system</h2>
-        <div class="points-table" id="points-table"></div>
-        <p class="tiebreak" id="tiebreak">Points priority: Booyah &gt; Kills &gt; Placement</p>
-      </div>
-      <div class="card">
-        <h2 class="card-title">Rules &amp; Regulations</h2>
-        <ul class="rules-list" id="rules-list"></ul>
-      </div>
+      <p class="finals-note">Top 4 from each group qualify. 12 teams in the final.</p>
     </section>
 
   </main>
@@ -110,7 +104,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <p id="footer-text">XT Esports · ELITE SERIES S1</p>
-      <a href="#" id="footer-link" target="_blank" rel="noopener">XT Esports channel</a>
+      <a href="https://youtube.com/@XT-SAAZ" target="_blank" rel="noopener" id="footer-link">XT Esports channel</a>
     </div>
   </footer>
 
