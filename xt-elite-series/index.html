@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XT Esports — ELITE SERIES S1</title>
+  <meta name="description" content="ELITE SERIES S1 Free Fire MAX group tournament by XT Esports. Group standings, schedule, points and live stream.">
+  <meta name="theme-color" content="#101114">
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23101114"/><text x="32" y="42" font-family="Arial Black,Arial,sans-serif" font-size="26" font-weight="900" fill="%23FFB000" text-anchor="middle">XT</text></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">XT</span>
+        <div class="brand-text">
+          <strong>ELITE SERIES S1</strong>
+          <span>XT Esports · Free Fire MAX</span>
+        </div>
+      </div>
+      <span class="live-pill" id="live-pill">LIVE</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- hero / scoreboard header -->
+    <section class="hero">
+      <div class="hero-title">
+        <h1>ELITE<br>SERIES <em>S1</em></h1>
+        <p id="hero-sub">Group stage — 36 teams, 3 groups, top 4 qualify</p>
+      </div>
+      <div class="hero-facts">
+        <div class="fact">
+          <span class="fact-label">Prize</span>
+          <span class="fact-value" id="prize-value">₹500</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Format</span>
+          <span class="fact-value" id="format-value">Groups → Finals</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Stream</span>
+          <span class="fact-value" id="stream-value">5:30 PM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- today's schedule strip -->
+    <section class="today" id="today-strip" hidden>
+      <div class="today-label">Today</div>
+      <div class="today-info" id="today-info"></div>
+      <a class="btn btn-live" id="stream-link" href="#" target="_blank" rel="noopener">Watch live →</a>
+    </section>
+
+    <!-- group standings -->
+    <section class="groups" id="groups-wrap"></section>
+
+    <!-- finals -->
+    <section class="finals card" id="finals-card">
+      <h2 class="card-title">Finals</h2>
+      <p class="finals-date" id="finals-date">Date to be announced by admin</p>
+      <div class="finals-note" id="finals-note">Top 4 from each group qualify. 12 teams compete in the final.</div>
+    </section>
+
+    <!-- points + rules -->
+    <section class="rules-grid">
+      <div class="card">
+        <h2 class="card-title">Point system</h2>
+        <div class="points-table" id="points-table"></div>
+        <p class="tiebreak" id="tiebreak">Tiebreak: Booyah > Kills > Placement</p>
+      </div>
+      <div class="card">
+        <h2 class="card-title">Rules</h2>
+        <ul class="rules-list" id="rules-list"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p id="footer-text">XT Esports · ELITE SERIES S1</p>
+      <a href="#" id="footer-link" target="_blank" rel="noopener">XT Esports channel</a>
+    </div>
+  </footer>
+
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+  <script src="firebase-live.js"></script>
+</body>
+</html>

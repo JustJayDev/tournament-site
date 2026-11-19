@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-11-19T07:05:00.000Z",
+  "tournament": {
+    "title": "ELITE SERIES S1",
+    "organizer": "XT Esports",
+    "status": "live",
+    "format": "Group stage → Finals",
+    "prize": {
+      "label": "₹500",
+      "payouts": {
+        "1": 500
+      }
+    },
+    "schedule": [
+      {
+        "id": "grp-a",
+        "label": "Group A",
+        "date": "2026-11-14",
+        "time": "6:00 PM",
+        "status": "done"
+      },
+      {
+        "id": "grp-b",
+        "label": "Group B",
+        "date": "2026-11-15",
+        "time": "6:00 PM",
+        "status": "done"
+      },
+      {
+        "id": "grp-c",
+        "label": "Group C",
+        "date": "2026-11-19",
+        "time": "5:30 PM",
+        "status": "today"
+      }
+    ],
+    "finals": {
+      "label": "Finals",
+      "date": "",
+      "time": "",
+      "status": "tbd"
+    },
+    "points": {
+      "kill": 1,
+      "placement": [12, 9, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0]
+    },
+    "tiebreak": "Booyah > Kills > Placement",
+    "stream": {
+      "channel": "XT Esports",
+      "url": "https://youtube.com/@XT-SAAZ",
+      "time": "5:30 PM"
+    },
+    "rules": [
+      "Squad entry only (4 players per team)",
+      "Keep all maps downloaded before the match",
+      "No random invites — penalty −15 points",
+      "Abuse/misbehaviour — penalty −10 points",
+      "Same active character skill not allowed for teammates",
+      "Be respectful in lobby and game"
+    ],
+    "whatsapp": ""
+  },
+  "groups": {
+    "A": {
+      "id": "grp-a",
+      "label": "Group A",
+      "status": "done",
+      "teams": [
+        "RUTHLESS X",
+        "UK RAWAT MATES",
+        "XIN PANEL",
+        "KING GANG",
+        "BLACK 444",
+        "RETRIED PROS",
+        "THE GOATS",
+        "SHASTRI BOYS",
+        "NXT LEVEL TEAM",
+        "TEAM XT",
+        "K2 GLOBAL",
+        "FEAR MAKERS"
+      ],
+      "matches": [],
+      "qualifiers": 4
+    },
+    "B": {
+      "id": "grp-b",
+      "label": "Group B",
+      "status": "done",
+      "teams": [
+        "TRG BADSHAH",
+        "TOXIC BROTHER",
+        "TERYMAX ESPORTS",
+        "DOOM TROOPERZ",
+        "RAI 444",
+        "TEAM RG",
+        "TEAM VWARRIOR",
+        "TLW RANGERS",
+        "THE CODER",
+        "X4 ESP",
+        "NEXORA ESPORTS",
+        "CANDY ESP"
+      ],
+      "matches": [],
+      "qualifiers": 4
+    },
+    "C": {
+      "id": "grp-c",
+      "label": "Group C",
+      "status": "today",
+      "teams": [],
+      "matches": [],
+      "qualifiers": 4
+    }
+  }
+}
