@@ -108,28 +108,16 @@
       </div>
     </section>
 
-    <!-- standings table -->
+    <!-- standings table (honest empty state) -->
     <section class="standings-section" aria-labelledby="standings-title">
       <div class="wrap">
         <div class="section-head">
           <h2 class="section-title" id="standings-title">Overall Standings</h2>
           <span class="rule-chip">Top 3 highlighted</span>
         </div>
-        <p class="table-note">Preview table — final totals land after matches finish.</p>
-        <div class="table-scroll">
-          <table class="standings-table">
-            <caption class="sr-only">Player standings by rank, kills and total points</caption>
-            <thead>
-              <tr>
-                <th scope="col" class="col-rank">Rank</th>
-                <th scope="col" class="col-team">Team name</th>
-                <th scope="col" class="col-num">Kills</th>
-                <th scope="col" class="col-num">Total</th>
-              </tr>
-            </thead>
-            <tbody id="standings-body">
-            </tbody>
-          </table>
+        <div class="standings-empty">
+          <p class="standings-empty-title">No results yet</p>
+          <p class="standings-empty-sub">Final standings appear here once matches finish. This table is not pre-filled.</p>
         </div>
       </div>
     </section>

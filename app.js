@@ -8,54 +8,10 @@ const PLAYERS = [
   "GP.J1NW00", "ABHIMANYU1", "7h aura", "Agent ITACHI", "Rock yt."
 ];
 
-/* ---------- standings (from the tournament reference table) ----------
-   Demo values until match results come in. First 3 rows are
-   placeholders — replace with real totals when matches finish. */
-const STANDINGS = [
-  { rank: 1, team: "EGL ESP",     kills: 84, total: 93 },
-  { rank: 2, team: "Team goat",   kills: 38, total: 67 },
-  { rank: 3, team: "THE CODERS",  kills: 28, total: 63 },
-  { rank: 4, team: "DECTO ESPORTS", kills: 36, total: 56 },
-  { rank: 5, team: "ARIHANT",     kills: 32, total: 56 },
-  { rank: 6, team: "TEAM FROXTERS", kills: 24, total: 49 },
-  { rank: 7, team: "Falcon eliminator", kills: 24, total: 45 },
-  { rank: 8, team: "FOXES",       kills: 26, total: 40 },
-  { rank: 9, team: "APEX ESPORTS", kills: 24, total: 37 },
-  { rank: 10, team: "REFLEX ESPORTS", kills: 22, total: 36 },
-  { rank: 11, team: "TITAN BOLD", kills: 10, total: 25 },
-  { rank: 12, team: "RUSHER FC",  kills: 8,  total: 12 }
-];
-
 const MAX_SLOTS = 48;
 const FILLED = PLAYERS.length;
 
 const $ = (id) => document.getElementById(id);
-
-/* ---------- standings table ---------- */
-function renderStandings() {
-  const tbody = $("standings-body");
-  if (!tbody) return;
-  STANDINGS.forEach((t) => {
-    const tr = document.createElement("tr");
-    tr.className = `rank-${Math.min(t.rank, 3)}`;
-    const rank = document.createElement("td");
-    const rankBadge = document.createElement("span");
-    rankBadge.className = "rank-num";
-    rankBadge.textContent = t.rank;
-    rank.appendChild(rankBadge);
-    const team = document.createElement("td");
-    team.textContent = t.team;
-    const kills = document.createElement("td");
-    kills.className = "kills-num";
-    kills.textContent = t.kills;
-    const total = document.createElement("td");
-    total.className = "total-num";
-    total.textContent = t.total;
-    tr.append(rank, team, kills, total);
-    tbody.appendChild(tr);
-  });
-}
-
 /* ---------- player list ---------- */
 function renderPlayers() {
   const list = $("player-list");
@@ -108,7 +64,6 @@ function initRegister() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderStandings();
   renderPlayers();
   initSlots();
   initRegister();
