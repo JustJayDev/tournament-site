@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XT Esports — ELITE SERIES S1</title>
   <meta name="description" content="ELITE SERIES S1 Free Fire MAX group tournament by XT Esports. Group standings, schedule, points and live stream.">
-  <meta name="theme-color" content="#101114">
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23101114"/><text x="32" y="42" font-family="Arial Black,Arial,sans-serif" font-size="26" font-weight="900" fill="%23FFB000" text-anchor="middle">XT</text></svg>'>
+  <meta name="theme-color" content="#0A0D12">
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%230A0D12"/><text x="32" y="42" font-family="Arial Black,Arial,sans-serif" font-size="26" font-weight="900" fill="%23CCAA57" text-anchor="middle">XT</text></svg>'>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,18 +23,24 @@
           <span>XT Esports · Free Fire MAX</span>
         </div>
       </div>
-      <span class="live-pill" id="live-pill">LIVE</span>
+      <div class="topbar-right">
+        <span class="live-pill" id="live-pill">LIVE</span>
+        <a class="watch-live" id="top-watch" href="https://youtube.com/@XT-SAAZ" target="_blank" rel="noopener">WATCH LIVE</a>
+      </div>
     </div>
   </header>
 
-  <main class="wrap">
-
-    <!-- hero / scoreboard header -->
-    <section class="hero">
-      <div class="hero-title">
-        <h1>ELITE<br>SERIES <em>S1</em></h1>
-        <p id="hero-sub">Group stage — 36 teams, 3 groups, top 4 qualify</p>
+  <!-- hero: like the real poster -->
+  <section class="hero">
+    <div class="hero-bg" id="hero-bg" role="img" aria-label="XT Esports ELITE SERIES S1 live stream poster"></div>
+    <div class="hero-overlay"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-brand">
+        <span class="hero-esports">ESPORTS</span>
+        <span class="hero-present">XT ESPORTS PRESENTS</span>
       </div>
+      <h1 class="hero-title">ELITE<br>SERIES <em>S1</em></h1>
+      <p class="hero-sub" id="hero-sub">Group stage — 36 teams, 3 groups, top 4 qualify</p>
       <div class="hero-facts">
         <div class="fact">
           <span class="fact-label">Prize</span>
@@ -49,16 +55,34 @@
           <span class="fact-value" id="stream-value">5:30 PM</span>
         </div>
       </div>
+      <div class="hero-stream">
+        <span class="stream-label">LIVE STREAM ON XT ESPORTS CHANNEL — STARTS 5:30 PM</span>
+        <a class="stream-url" href="https://youtube.com/@XT-SAAZ" target="_blank" rel="noopener">youtube.com/@XT-SAAZ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- today's schedule strip -->
+  <section class="today" id="today-strip" hidden>
+    <div class="wrap today-inner">
+      <span class="today-label">TODAY</span>
+      <span class="today-info" id="today-info"></span>
+      <a class="btn btn-live" id="stream-link" href="#" target="_blank" rel="noopener">WATCH LIVE →</a>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <!-- qualified band -->
+    <section class="qualified-band">
+      <div class="qualified-head">
+        <span class="qualified-title">TOP 4 QUALIFIED FOR FINALS</span>
+        <span class="qualified-sub">Group A · Group B</span>
+      </div>
+      <div class="qualified-teams" id="qualified-teams"></div>
     </section>
 
-    <!-- today's schedule strip -->
-    <section class="today" id="today-strip" hidden>
-      <div class="today-label">Today</div>
-      <div class="today-info" id="today-info"></div>
-      <a class="btn btn-live" id="stream-link" href="#" target="_blank" rel="noopener">Watch live →</a>
-    </section>
-
-    <!-- group standings -->
+    <!-- group standings table -->
     <section class="groups" id="groups-wrap"></section>
 
     <!-- finals -->
@@ -73,10 +97,10 @@
       <div class="card">
         <h2 class="card-title">Point system</h2>
         <div class="points-table" id="points-table"></div>
-        <p class="tiebreak" id="tiebreak">Tiebreak: Booyah > Kills > Placement</p>
+        <p class="tiebreak" id="tiebreak">Points priority: Booyah &gt; Kills &gt; Placement</p>
       </div>
       <div class="card">
-        <h2 class="card-title">Rules</h2>
+        <h2 class="card-title">Rules &amp; Regulations</h2>
         <ul class="rules-list" id="rules-list"></ul>
       </div>
     </section>

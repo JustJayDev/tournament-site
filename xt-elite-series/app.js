@@ -28,8 +28,17 @@ function applyTournamentData(data) {
   }
 }
 
-/* ---------- standings computation ---------- */
+/* ---------- standings computation ----------
+   If the group ships an authoritative `standings` array (from the
+   official point table), use it as-is. Otherwise compute from matches. */
 function computeStandings(group) {
+  if (group.standings && group.standings.length) {
+    return group.standings.slice().sort((a, b) => {
+      if (b.points !== a.points) return b.points - a.points;
+      if ((b.booyah || 0) !== (a.booyah || 0)) return (b.booyah || 0) - (a.booyah || 0);
+      return b.kills - a.kills;
+    });
+  }
   const teams = group.teams || [];
   const matches = group.matches || [];
   const standings = teams.map((team) => ({
@@ -130,7 +139,7 @@ function renderGroups() {
 
     const header = document.createElement("div");
     header.className = "s-row s-head";
-    ["#", "Team", "P", "W", "K", "Pts"].forEach((h, i) => {
+    ["#", "Team", "MP", "K", "B", "Pts"].forEach((h, i) => {
       const c = document.createElement("span");
       c.className = i === 1 ? "s-team" : "s-num";
       c.textContent = h;
@@ -138,7 +147,7 @@ function renderGroups() {
     });
     table.appendChild(header);
 
-    if (g.teams && g.teams.length) {
+    if (standings.length) {
       standings.forEach((s, i) => {
         const row = document.createElement("div");
         row.className = "s-row" + (i < g.qualifiers ? " qual" : "");
@@ -150,17 +159,17 @@ function renderGroups() {
         team.textContent = s.team;
         const played = document.createElement("span");
         played.className = "s-num";
-        played.textContent = s.matches;
-        const wins = document.createElement("span");
-        wins.className = "s-num";
-        wins.textContent = s.wins;
+        played.textContent = s.dnp ? "—" : (s.mp || s.matches || 0);
         const kills = document.createElement("span");
         kills.className = "s-num";
-        kills.textContent = s.kills;
+        kills.textContent = s.dnp ? "—" : (s.kills || 0);
+        const booyah = document.createElement("span");
+        booyah.className = "s-num";
+        booyah.textContent = s.dnp ? "—" : (s.booyah || 0);
         const pts = document.createElement("span");
         pts.className = "s-num s-pts";
-        pts.textContent = s.points;
-        row.append(rank, team, played, wins, kills, pts);
+        pts.textContent = s.dnp ? "DNP" : s.points;
+        row.append(rank, team, played, kills, booyah, pts);
         table.appendChild(row);
       });
     } else {
@@ -176,6 +185,35 @@ function renderGroups() {
     section.append(head, table, note);
     wrap.appendChild(section);
   });
+}
+
+function renderQualified() {
+  const box = $("qualified-teams");
+  if (!box) return;
+  box.innerHTML = "";
+  let anyQualified = false;
+  Object.keys(GROUPS).forEach((key) => {
+    const g = GROUPS[key];
+    if (!g || !g.qualifiers) return;
+    const standings = computeStandings(g);
+    standings.slice(0, g.qualifiers).forEach((s, i) => {
+      anyQualified = true;
+      const chip = document.createElement("span");
+      chip.className = "qual-team";
+      const rank = document.createElement("span");
+      rank.className = "q-rank";
+      rank.textContent = `${g.label}${i + 1}`;
+      const name = document.createTextNode(" " + s.team);
+      chip.append(rank, name);
+      box.appendChild(chip);
+    });
+  });
+  if (!anyQualified) {
+    const empty = document.createElement("span");
+    empty.className = "qual-team";
+    empty.textContent = "Awaiting group results";
+    box.appendChild(empty);
+  }
 }
 
 function renderFinals() {
@@ -242,6 +280,7 @@ function renderFooter() {
 function initSite() {
   renderHero();
   renderTodayStrip();
+  renderQualified();
   renderGroups();
   renderFinals();
   renderPoints();

@@ -1,6 +1,6 @@
 {
-  "schema": 1,
-  "generatedAt": "2026-11-19T07:05:00.000Z",
+  "schema": 2,
+  "generatedAt": "2026-11-19T07:24:00.000Z",
   "tournament": {
     "title": "ELITE SERIES S1",
     "organizer": "XT Esports",
@@ -52,12 +52,12 @@
       "time": "5:30 PM"
     },
     "rules": [
-      "Squad entry only (4 players per team)",
-      "Keep all maps downloaded before the match",
-      "No random invites — penalty −15 points",
-      "Abuse/misbehaviour — penalty −10 points",
-      "Same active character skill not allowed for teammates",
-      "Be respectful in lobby and game"
+      "KEEP ALL MAPS DOWNLOADED",
+      "TAKE SQUAD ENTRY",
+      "DO NOT INVITE RANDOMS — RANDOM INVITE = -15",
+      "ABUSE OR MISBEHAVE = -10",
+      "BE RESPECTFUL TO EACH OTHER",
+      "SAME ACTIVE CHARACTER SKILL NOT ALLOWED"
     ],
     "whatsapp": ""
   },
@@ -67,18 +67,32 @@
       "label": "Group A",
       "status": "done",
       "teams": [
+        "TEAM XT",
+        "RETRIED PROS",
+        "K2 GLOBAL",
         "RUTHLESS X",
         "UK RAWAT MATES",
-        "XIN PANEL",
-        "KING GANG",
-        "BLACK 444",
-        "RETRIED PROS",
-        "THE GOATS",
         "SHASTRI BOYS",
+        "XIN PANEL",
         "NXT LEVEL TEAM",
-        "TEAM XT",
-        "K2 GLOBAL",
-        "FEAR MAKERS"
+        "THE GOATS",
+        "BLACK 444",
+        "FEAR MAKERS",
+        "KING GANG"
+      ],
+      "standings": [
+        { "team": "TEAM XT", "points": 171, "kills": 127, "booyah": 1, "mp": 3 },
+        { "team": "RETRIED PROS", "points": 64, "kills": 38, "booyah": 1, "mp": 3 },
+        { "team": "K2 GLOBAL", "points": 61, "kills": 36, "booyah": 1, "mp": 3 },
+        { "team": "RUTHLESS X", "points": 45, "kills": 12, "booyah": 1, "mp": 3 },
+        { "team": "UK RAWAT MATES", "points": 25, "kills": 10, "booyah": 1, "mp": 3 },
+        { "team": "SHASTRI BOYS", "points": 22, "kills": 4, "booyah": 1, "mp": 3 },
+        { "team": "XIN PANEL", "points": 20, "kills": 7, "booyah": 0, "mp": 3 },
+        { "team": "NXT LEVEL TEAM", "points": 19, "kills": 3, "booyah": 0, "mp": 3 },
+        { "team": "THE GOATS", "points": 17, "kills": 1, "booyah": 0, "mp": 3 },
+        { "team": "BLACK 444", "points": 12, "kills": 6, "booyah": 0, "mp": 3 },
+        { "team": "FEAR MAKERS", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true },
+        { "team": "KING GANG", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true }
       ],
       "matches": [],
       "qualifiers": 4
@@ -88,18 +102,32 @@
       "label": "Group B",
       "status": "done",
       "teams": [
-        "TRG BADSHAH",
-        "TOXIC BROTHER",
-        "TERYMAX ESPORTS",
-        "DOOM TROOPERZ",
-        "RAI 444",
-        "TEAM RG",
-        "TEAM VWARRIOR",
-        "TLW RANGERS",
         "THE CODER",
         "X4 ESP",
+        "TERYMAX ESPORTS",
+        "DOOM TROOPERZ",
+        "TEAM RG",
+        "TLW RANGERS",
+        "RAI 444",
+        "TOXIC BROTHER",
+        "TRG BADSHAH",
+        "TEAM WARRIOR",
         "NEXORA ESPORTS",
         "CANDY ESP"
+      ],
+      "standings": [
+        { "team": "THE CODER", "points": 93, "kills": 60, "booyah": 1, "mp": 4 },
+        { "team": "X4 ESP", "points": 61, "kills": 32, "booyah": 1, "mp": 4 },
+        { "team": "TERYMAX ESPORTS", "points": 54, "kills": 29, "booyah": 0, "mp": 3 },
+        { "team": "DOOM TROOPERZ", "points": 54, "kills": 22, "booyah": 0, "mp": 4 },
+        { "team": "TEAM RG", "points": 48, "kills": 24, "booyah": 0, "mp": 3 },
+        { "team": "TLW RANGERS", "points": 28, "kills": 11, "booyah": 0, "mp": 3 },
+        { "team": "RAI 444", "points": 21, "kills": 3, "booyah": 0, "mp": 3 },
+        { "team": "TOXIC BROTHER", "points": 5, "kills": 1, "booyah": 0, "mp": 1 },
+        { "team": "TRG BADSHAH", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true },
+        { "team": "TEAM WARRIOR", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true },
+        { "team": "NEXORA ESPORTS", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true },
+        { "team": "CANDY ESP", "points": 0, "kills": 0, "booyah": 0, "mp": 0, "dnp": true }
       ],
       "matches": [],
       "qualifiers": 4
@@ -109,6 +137,7 @@
       "label": "Group C",
       "status": "today",
       "teams": [],
+      "standings": [],
       "matches": [],
       "qualifiers": 4
     }
